@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true">
+
+    <!-- Workshop 5 Task 1: Landscape Layout -->
+    <!-- This layout arranges the UI elements horizontally for better space usage -->
+    <!-- Left side has photo and camera, right side has crime details -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:id="@+id/crime_photo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@android:color/darker_gray"
+                android:cropToPadding="true"
+                android:scaleType="centerInside" />
+
+            <ImageButton
+                android:id="@+id/crime_camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_camera" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Workshop 6 Task 1: Landscape Layout -->
+            <!-- Title and date are on the same line with checkbox -->
+            <!-- This makes better use of horizontal space in landscape mode -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/crime_title_label"
+                    android:textAppearance="?android:attr/textAppearanceListItem"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/crime_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/crime_title_hint"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:text="@string/crime_details_label"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/crime_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <CheckBox
+                android:id="@+id/crime_solved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crime_solved_label" />
+
+            <Button
+                android:id="@+id/crime_suspect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crime_suspect_text" />
+
+            <Button
+                android:id="@+id/crime_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/crime_report_text" />
+
+            <Button
+                android:id="@+id/call_contact_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/call_from_contact_list" />
+
+            <Button
+                android:id="@+id/call_hardcoded_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/call_hardcoded_number" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
